@@ -1,6 +1,5 @@
 <script setup>
-import Nyan from "ui-nyan";
-import { HelloWorld } from "ui-nyan";
+import Nyan from "./components/Nyan.vue";
 </script>
 
 <template>
@@ -12,8 +11,7 @@ import { HelloWorld } from "ui-nyan";
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <Nyan img="https://media.tenor.com/4otr5S3l1agAAAAj/dancing-duckdancing.gif" />
-  <HelloWorld msg="Vite + Vue" />
+  <Nyan />
 </template>
 
 <style scoped>

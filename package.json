@@ -6,10 +6,13 @@
   "author": "lmhinnel",
   "license": "MIT",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "plugins/*"
   ],
   "private": true,
   "scripts": {
+    "devServer": "yarn workspace server run dev",
+    "devUi": "yarn workspace ui run dev",
     "dev": "yarn workspaces foreach -Ap run dev",
     "build": "yarn workspaces foreach -Ap run build",
     "start": "yarn workspaces server start"
