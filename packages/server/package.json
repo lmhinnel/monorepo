@@ -1,4 +1,13 @@
 {
   "name": "server",
-  "packageManager": "yarn@4.5.3"
+  "version": "0.1.0",
+  "packageManager": "yarn@4.5.3",
+  "private": true,
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "scripts": {
+    "dev": "node src/index.js",
+    "start": "node src/index.js"
+  }
 }
