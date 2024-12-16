@@ -31,10 +31,22 @@
 
 ## Check var
 
-| Workspace | Description                              |
-| --------- | ---------------------------------------- |
-| `ui`      | antd v4 (modal use :open) <br /> ui-nyan |
-| `ui-nyan` | antd v3     (modal use :visible)         |
+| Workspace  | Description                                      |
+| ---------- | ------------------------------------------------ |
+| `ui`       | antd v4 (modal use :open) <br /> ui-nyan         |
+| `ui-nyan`  | antd v3     (modal use :visible) <br /> ui-axios |
+| `ui-axios` | antd v4                                          |
+
+## Development
+
+```bash
+nvm use // use node version
+# node -v > .nvmrc // save node version
+yarn set version berry // set yarn version
+yarn // install dependencies
+yarn create vite . // create ui app
+yarn workspace ${workspace name} add ${package} // add package to workspace
+```
 
 ## References
 

@@ -1,5 +1,7 @@
 <template>
   <div class="bg" :style="bg">
+    <HelloWorld msg="Vite + Vue" />
+    <br />
     <div class="nyan" :style="nyan" @click="showModal">
       <img :src="img" alt="nyan" width="100%" />
     </div>
@@ -21,6 +23,7 @@
 <script>
 import { defineComponent, ref } from "vue";
 import NyanImg from "../assets/nyan.gif";
+import { HelloWorld } from "ui-axios";
 
 const visible = ref(false);
 const showModal = () => (visible.value = true);
@@ -41,6 +44,9 @@ export default {
       type: String,
       default: NyanImg,
     },
+  },
+  components: {
+    HelloWorld,
   },
   data() {
     return {
