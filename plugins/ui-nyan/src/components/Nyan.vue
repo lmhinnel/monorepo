@@ -1,13 +1,30 @@
 <template>
   <div class="bg" :style="bg">
-    <div class="nyan" :style="nyan">
+    <div class="nyan" :style="nyan" @click="showModal">
       <img :src="img" alt="nyan" width="100%" />
     </div>
   </div>
+  <a-modal v-model:visible="visible" title="Who's that pokémon" @ok="handleOk">
+    <iframe
+      width="100%"
+      height="300px"
+      src="https://www.youtube.com/embed/EE-xtCF3T94?si=pY02eBzzHq17GpNt"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </a-modal>
 </template>
 
 <script>
+import { defineComponent, ref } from "vue";
 import NyanImg from "../assets/nyan.gif";
+
+const visible = ref(false);
+const showModal = () => (visible.value = true);
+const handleOk = (e) => (visible.value = false);
 
 export default {
   name: "nyan",
@@ -25,6 +42,13 @@ export default {
       default: NyanImg,
     },
   },
+  data() {
+    return {
+      visible,
+      showModal,
+      handleOk,
+    };
+  },
 };
 </script>
 
@@ -37,6 +61,7 @@ export default {
   height: 2rem;
   position: relative;
   animation: nyanEffect 10s infinite ease-in-out;
+  cursor: pointer;
 }
 @keyframes nyanEffect {
   0% {

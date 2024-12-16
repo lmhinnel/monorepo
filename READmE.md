@@ -13,10 +13,10 @@
 3. Run `yarn set version berry` for fun (pnp)
 4. Run `yarn run dev` to start the development server/ui (+ plugins)
 
-```bash
-server: http://localhost:8080/
-ui:     http://localhost:5173/
-```
+## Access
+
+- Server:   [http://localhost:8080/](http://localhost:8080/)
+- UI:       [http://localhost:5173/](http://localhost:5173/)
 
 ## Structure
 ```bash
@@ -28,6 +28,13 @@ ui:     http://localhost:5173/
 ├────── ui-nyan     (ui plugin)
 └── yarn.lock
 ```
+
+## Check var
+
+| Workspace | Description                              |
+| --------- | ---------------------------------------- |
+| `ui`      | antd v4 (modal use :open) <br /> ui-nyan |
+| `ui-nyan` | antd v3     (modal use :visible)         |
 
 ## References
 
