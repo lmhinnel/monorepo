@@ -1,6 +1,7 @@
 <script setup>
 import Nyan from "ui-nyan";
 import { HelloWorld } from "ui-nyan";
+import { HelloChat } from "ui-axios";
 import { ref } from "vue";
 
 const open = ref(false);
@@ -19,10 +20,14 @@ const handleOk = () => (open.value = false);
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+
   <Nyan
     img="https://media.tenor.com/4otr5S3l1agAAAAj/dancing-duckdancing.gif"
   />
+
   <HelloWorld msg="Vite + Vue" />
+
+  <HelloChat />
 
   <a-button type="primary" @click="showModal">Open Secret Modal</a-button>
   <a-modal v-model:open="open" title="Secret Modal" @ok="handleOk">

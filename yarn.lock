@@ -2172,6 +2172,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "server@workspace:packages/server"
   dependencies:
+    axios: "npm:^1.7.9"
     cors: "npm:^2.8.5"
     express: "npm:^4.21.2"
   languageName: unknown
@@ -2413,6 +2414,7 @@ __metadata:
   dependencies:
     "@vitejs/plugin-vue": "npm:^5.2.1"
     ant-design-vue: "npm:^4.2.6"
+    ui-axios: "workspace:^"
     ui-nyan: "workspace:^"
     vite: "npm:^6.0.1"
     vue: "npm:^3.5.13"

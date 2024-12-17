@@ -26,16 +26,39 @@
 ├────── ui          (frontend)
 ├── plugins
 ├────── ui-nyan     (ui plugin)
+├────── ui-axios    (ui plugin)
 └── yarn.lock
+```
+
+```mermaid
+flowchart
+    subgraph server-0
+        server -.- s-0((/nyan))
+        server -.- s-1((/chat))
+    end
+    subgraph p-ui-1
+        ui-nyan -.- ui-nyan1((Nyan))
+        ui-nyan -.- ui-nyan2((HelloWorld))
+    end
+    subgraph p-ui-2
+        ui-axios -.- ui-axios1((HelloWorld))
+        ui-axios -.- ui-axios2((HelloChat))
+    end
+    ui-nyan -- "Nyan-->HelloWorld" --> ui-axios
+
+    ui -- Nyan, HelloWorld --> p-ui-1
+    ui -- HelloChat --> p-ui-2
+
+    ui-axios -- "HelloWorld --> /nyan<br />HelloChat --> /chat" --> server
 ```
 
 ## Check var
 
-| Workspace  | Description                                      |
-| ---------- | ------------------------------------------------ |
-| `ui`       | antd v4 (modal use :open) <br /> ui-nyan         |
-| `ui-nyan`  | antd v3     (modal use :visible) <br /> ui-axios |
-| `ui-axios` | antd v4                                          |
+| Workspace  | Description                  |
+| ---------- | ---------------------------- |
+| `ui`       | antd v4 (modal use :open)    |
+| `ui-nyan`  | antd v3 (modal use :visible) |
+| `ui-axios` | antd v4                      |
 
 ## Development
 
